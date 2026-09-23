@@ -127,9 +127,9 @@ def shift_sync_window(params, today, date_window_size, forced_window_size=None):
     new_end = min(today, current_end + timedelta(days=(forced_window_size if forced_window_size else date_window_size)))
 
     new_params = {**params,
-                  'dateRange.start.day': current_end.day,
-                  'dateRange.start.month': current_end.month,
-                  'dateRange.start.year': current_end.year,
+                  'dateRange.start.day': (current_end + timedelta(days=1)).day,
+                  'dateRange.start.month': (current_end + timedelta(days=1)).month,
+                  'dateRange.start.year': (current_end + timedelta(days=1)).year,
                   'dateRange.end.day': new_end.day,
                   'dateRange.end.month': new_end.month,
                   'dateRange.end.year': new_end.year,}
