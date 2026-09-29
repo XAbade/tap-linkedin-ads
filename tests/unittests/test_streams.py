@@ -343,7 +343,7 @@ class TestLinkedInAds(unittest.TestCase):
         ['test_multiple_record', 1, '2022-08-01T00:00:00Z', {'elements': [{'id': 1}]}]
     ])
     @mock.patch("tap_linkedin_ads.streams.LinkedInAds.process_records")
-    @mock.patch("tap_linkedin_ads.streams.shift_sync_window", return_value=('', '', ''))
+    @mock.patch("tap_linkedin_ads.streams.shift_sync_window", return_value=(datetime.date(2022, 8, 2), datetime.date(2022, 8, 1), {}))
     @mock.patch("tap_linkedin_ads.streams.transform_json")
     @mock.patch("tap_linkedin_ads.streams.sync_analytics_endpoint")
     @mock.patch("tap_linkedin_ads.streams.merge_responses")
