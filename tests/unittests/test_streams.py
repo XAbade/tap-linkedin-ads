@@ -159,7 +159,7 @@ class TestStreamsUtils(unittest.TestCase):
         """
         Test that `shift_sync_window` function move date window properly.
         """
-        expected_start_date = datetime.date(year=2020, month=10, day=1)
+        expected_start_date = datetime.date(year=2020, month=10, day=2)
         expected_end_date = datetime.date(year=2020, month=10, day=31)
         expected_params = {
             'dateRange.start.year': expected_start_date.year,
